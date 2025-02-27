@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TutorLanka - Expert Tutoring Services</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-content">
+        <div class="logo">
+          <i data-lucide="bot" class="logo-icon"></i>
+          <span>TutorLanka</span>
+        </div>
+        
+        <div class="nav-links" id="navLinks">
+          <a href="#home">Home</a>
+          <a href="#features">Features</a>
+          <a href="#subjects">Subjects</a>
+          <a href="#tutors">Our Tutors</a>
+          <a href="#textbooks">Textbooks</a>
+          <button class="btn-primary">Book a Session</button>
+        </div>
+
+        <button class="menu-btn" id="menuBtn">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#tutors">Our Tutors</a>
+      <a href="#textbooks">Textbooks</a>
+      <button class="btn-primary">Book a Session</button>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Excel in Your Studies with Sri Lanka's Best Tutors</h1>
+          <p>Join the leading tutoring platform in Sri Lanka. Get personalized guidance from experienced local educators who understand the local curriculum and exam patterns.</p>
+          <div class="hero-buttons">
+            <button class="btn-primary">Start Learning</button>
+            <button class="btn-secondary">Learn More</button>
+          </div>
+          <div class="stats">
+            <div class="stat-item">
+              <p class="stat-number">1000+</p>
+              <p class="stat-label">Students Island-wide</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-number">98%</p>
+              <p class="stat-label">Success Rate</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-number">25+</p>
+              <p class="stat-label">Expert Tutors</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80" alt="Students studying">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose Our Tutoring Service?</h2>
+        <p>Experience excellence in education with our comprehensive support system</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i data-lucide="book-open"></i>
+          <h3>Local Curriculum Expertise</h3>
+          <p>Our tutors are well-versed with Sri Lankan syllabi including local and London AL/OL examinations.</p>
+        </div>
+        <div class="feature-card">
+          <i data-lucide="users"></i>
+          <h3>Bilingual Teaching</h3>
+          <p>Classes available in Sinhala, Tamil, and English to ensure comfortable learning in your preferred language.</p>
+        </div>
+        <div class="feature-card">
+          <i data-lucide="award"></i>
+          <h3>Proven Results</h3>
+          <p>Our students consistently achieve top results in national examinations and university admissions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tutors" class="tutors">
+    <div class="container">
+      <div class="section-header">
+        <h2>Meet Our Distinguished Tutors</h2>
+        <p>Learn from Sri Lanka's finest educators</p>
+      </div>
+      <div class="tutors-grid" id="tutorsGrid">
+        <!-- Tutors will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <section id="subjects" class="subjects">
+    <div class="container">
+      <h2>Subjects We Cover</h2>
+      <div class="subjects-grid" id="subjectsGrid">
+        <!-- Subjects will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- New Textbooks Section -->
+  <section id="textbooks" class="textbooks">
+    <div class="container">
+      <div class="section-header">
+        <h2>Educational Textbooks</h2>
+        <p>High-quality study materials curated by our expert tutors</p>
+      </div>
+      <div class="textbooks-grid" id="textbooksGrid">
+        <!-- Textbooks will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our Students Say</h2>
+      <div class="testimonials-grid" id="testimonialsGrid">
+        <!-- Testimonials will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Excel in Your Studies?</h2>
+      <button class="btn-primary">
+        Book Your Free Trial Class
+        <i data-lucide="arrow-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>TutorLanka</h3>
+          <p>Empowering Sri Lankan students to achieve academic excellence through personalized tutoring.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Tutors</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li>info@tutorlanka.lk</li>
+            <li>+94 11 234 5678</li>
+            <li>123 Galle Road</li>
+            <li>Colombo 03, Sri Lanka</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter">
+              <i data-lucide="twitter"></i>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i data-lucide="linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 TutorLanka. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <div class="whatsapp-float" id="whatsappFloat">
+    <i data-lucide="message-circle"></i>
+  </div>
+
+  <!-- WhatsApp Order Modal -->
+  <div class="whatsapp-modal" id="whatsappModal">
+    <div class="whatsapp-modal-content">
+      <button class="whatsapp-modal-close" id="whatsappModalClose">
+        <i data-lucide="x"></i>
+      </button>
+      <h3>Order via WhatsApp</h3>
+      <p>Fill in your details and we'll contact you shortly.</p>
+      
+      <form class="whatsapp-form" id="whatsappForm">
+        <div class="whatsapp-form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" required placeholder="Enter your full name">
+        </div>
+        
+        <div class="whatsapp-form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" required placeholder="Enter your phone number">
+        </div>
+        
+        <div class="whatsapp-form-group">
+          <label for="bookTitle">Book Title</label>
+          <input type="text" id="bookTitle" readonly>
+        </div>
+        
+        <div class="whatsapp-form-group">
+          <label for="message">Additional Message (Optional)</label>
+          <textarea id="message" placeholder="Any specific requirements or questions?"></textarea>
+        </div>
+        
+        <button type="submit" class="btn-whatsapp">
+          <i data-lucide="message-circle"></i>
+          Send WhatsApp Message
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>

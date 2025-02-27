@@ -1,0 +1,838 @@
+/* Base styles */
+:root {
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --secondary: #1e40af;
+  --text: #1f2937;
+  --text-light: #4b5563;
+  --bg-light: #eff6ff;
+  --white: #ffffff;
+  --whatsapp: #25D366;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--white);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-whatsapp {
+  background-color: var(--whatsapp);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1da851;
+  transform: translateY(-2px);
+}
+
+/* Navigation */
+.nav {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
+.logo-icon {
+  color: var(--primary);
+  width: 2rem;
+  height: 2rem;
+}
+
+.nav-links {
+  display: none;
+}
+
+/* Unique Hamburger Menu */
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  z-index: 1001;
+}
+
+.menu-btn:hover {
+  background-color: var(--bg-light);
+}
+
+.menu-btn i {
+  color: var(--primary);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu-btn.active i {
+  transform: rotate(90deg);
+}
+
+.mobile-menu {
+  display: none;
+  padding: 1rem;
+  background-color: var(--white);
+  border-top: 1px solid #e5e7eb;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.mobile-menu.active {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-menu a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-menu a:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  color: var(--primary);
+  background-color: var(--bg-light);
+}
+
+.mobile-menu a:hover:before {
+  width: 100%;
+}
+
+.mobile-menu button {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .menu-btn {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .nav-links a:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--primary);
+  }
+
+  .nav-links a:hover:before {
+    width: 100%;
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  padding: 8rem 0 4rem;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: var(--white);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1606391901318-07003db08d63?auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+}
+
+.hero-content {
+  position: relative;
+  display: grid;
+  gap: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.stat-item {
+  transform: translateY(0);
+  transition: transform 0.3s;
+}
+
+.stat-item:hover {
+  transform: translateY(-10px);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  opacity: 0.9;
+}
+
+.hero-image {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .hero-image {
+    display: block;
+  }
+
+  .hero-image img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Features Section */
+.features {
+  padding: 5rem 0;
+  background-color: var(--bg-light);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+  color: var(--primary);
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  margin-bottom: 0.75rem;
+}
+
+/* Tutors Section */
+.tutors {
+  padding: 5rem 0;
+}
+
+.tutors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.tutor-card {
+  background-color: var(--white);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.tutor-card:hover {
+  transform: translateY(-10px);
+}
+
+.tutor-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.tutor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.tutor-card:hover .tutor-image img {
+  transform: scale(1.05);
+}
+
+.tutor-info {
+  padding: 1.5rem;
+}
+
+.tutor-info h3 {
+  margin-bottom: 0.5rem;
+}
+
+.tutor-specialty {
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.tutor-experience {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+/* Subjects Section */
+.subjects {
+  padding: 5rem 0;
+  background-color: var(--bg-light);
+}
+
+.subjects h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.25rem;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.subject-item {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s;
+}
+
+.subject-item:hover {
+  transform: translateY(-5px);
+  background-color: #dbeafe;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Textbooks Section */
+.textbooks {
+  padding: 5rem 0;
+  background-color: var(--white);
+}
+
+.textbooks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.textbook-card {
+  background-color: var(--white);
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.textbook-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.textbook-image {
+  height: 200px;
+  overflow: hidden;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textbook-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.textbook-info {
+  padding: 1.5rem;
+}
+
+.textbook-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.textbook-subject {
+  color: var(--primary);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.textbook-price {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 1rem 0;
+  color: var(--text);
+}
+
+.textbook-description {
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 5rem 0;
+}
+
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.25rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background-color: var(--bg-light);
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-image {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonial-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-info h4 {
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-subject {
+  color: var(--primary);
+  font-size: 0.875rem;
+}
+
+/* CTA Section */
+.cta {
+  padding: 5rem 0;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: var(--white);
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+}
+
+.cta .btn-primary {
+  background-color: var(--white);
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.cta .btn-primary:hover {
+  background-color: #f8fafc;
+}
+
+/* Footer */
+.footer {
+  background-color: #111827;
+  color: var(--white);
+  padding: 3rem 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section {
+  transform: translateY(0);
+  transition: transform 0.3s;
+}
+
+.footer-section:hover {
+  transform: translateY(-10px);
+}
+
+.footer-section h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-section p,
+.footer-section ul {
+  color: #9ca3af;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: var(--primary);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: #9ca3af;
+  transition: all 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+.social-links i {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #1f2937;
+  color: #9ca3af;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--whatsapp);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-float i {
+  font-size: 30px;
+}
+
+/* WhatsApp Modal */
+.whatsapp-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.whatsapp-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.whatsapp-modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s;
+}
+
+.whatsapp-modal.active .whatsapp-modal-content {
+  transform: translateY(0);
+}
+
+.whatsapp-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-light);
+}
+
+.whatsapp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.whatsapp-form input,
+.whatsapp-form textarea,
+.whatsapp-form select {
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-family: inherit;
+}
+
+.whatsapp-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.whatsapp-form label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.whatsapp-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Animation for textbook cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.textbook-card {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.textbook-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.textbook-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.textbook-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
